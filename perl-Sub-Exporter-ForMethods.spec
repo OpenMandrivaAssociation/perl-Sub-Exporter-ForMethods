@@ -1,5 +1,5 @@
 %define upstream_name    Sub-Exporter-ForMethods
-%define upstream_version 0.091970
+%define upstream_version 0.100050
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
