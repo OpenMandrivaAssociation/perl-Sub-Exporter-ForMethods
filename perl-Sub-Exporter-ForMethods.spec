@@ -1,20 +1,20 @@
 %define upstream_name    Sub-Exporter-ForMethods
 %define upstream_version 0.100050
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Helper routines for using Sub::Exporter to build methods
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Sub/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Helper routines for using Sub::Exporter to build methods
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Sub/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Sub::Exporter)
-BuildRequires: perl(Sub::Name)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Sub::Exporter)
+BuildRequires:	perl(Sub::Name)
+BuildArch:	noarch
 
 %description
 The synopsis section, above, looks almost indistinguishable from any other
@@ -34,24 +34,33 @@ namespace::autoclean. This makes the following code work:
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc LICENSE README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Sun Apr 17 2011 Funda Wang <fwang@mandriva.org> 0.100.50-2mdv2011.0
++ Revision: 654300
+- rebuild for updated spec-helper
+
+* Wed Jan 06 2010 Jérôme Quelin <jquelin@mandriva.org> 0.100.50-1mdv2011.0
++ Revision: 486606
+- update to 0.100050
+
+* Fri Nov 06 2009 Jérôme Quelin <jquelin@mandriva.org> 0.91.970-1mdv2010.1
++ Revision: 461734
+- import perl-Sub-Exporter-ForMethods
 
 
+* Fri Nov 06 2009 cpan2dist 0.091970-1mdv
+- initial mdv release, generated with cpan2dist
