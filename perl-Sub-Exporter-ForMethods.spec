@@ -1,15 +1,15 @@
 %define upstream_name    Sub-Exporter-ForMethods
-%define upstream_version 0.100050
+%define upstream_version 0.100051
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Helper routines for using Sub::Exporter to build methods
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Sub/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Sub/Sub-Exporter-ForMethods-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Sub::Exporter)
@@ -64,3 +64,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Fri Nov 06 2009 cpan2dist 0.091970-1mdv
 - initial mdv release, generated with cpan2dist
+
