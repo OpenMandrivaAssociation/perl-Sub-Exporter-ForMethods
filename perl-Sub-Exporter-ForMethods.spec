@@ -1,15 +1,15 @@
 %define upstream_name    Sub-Exporter-ForMethods
-%define upstream_version 0.100051
+%define upstream_version 0.100055
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Helper routines for using Sub::Exporter to build methods
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Sub/Sub-Exporter-ForMethods-%{upstream_version}.tar.gz
+Url:		https://github.com/rjbs/Sub-Exporter-ForMethods
+Source0:	https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-ForMethods-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
