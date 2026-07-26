@@ -1,15 +1,13 @@
 %define upstream_name    Sub-Exporter-ForMethods
-%define upstream_version 0.100055
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.100055
+Release:	2
 
 Summary:	Helper routines for using Sub::Exporter to build methods
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/rjbs/Sub-Exporter-ForMethods
-Source0:	https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-ForMethods-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-ForMethods-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -32,7 +30,7 @@ namespace::autoclean. This makes the following code work:
   package MyLibrary;
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
